@@ -37,5 +37,5 @@ function startGame () {
     numberUser();
    }
     
-    startGame(56);
+    startGame();
 

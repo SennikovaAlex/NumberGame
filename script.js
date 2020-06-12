@@ -3,10 +3,17 @@ let isNumber = function(n) {
     return !isNaN(parseFloat(n)) && isFinite(n) 
 };
 
-function startGame (number) {
-    let numberGame = number;
+function startGame () {
+    let getRandomFloat = function (min, max) {
+        return Math.round(Math.random() * (max - min) + min);
+      };
+    
+
     
     function numberUser() {
+        let numberGame = getRandomFloat(1, 100);
+        console.log(numberGame);
+        
       let userNumber = prompt('Угадай число от 1 до 100'); 
        function reaction() {
     if (userNumber == null) {

@@ -5,27 +5,41 @@ let isNumber = function(n) {
 
 function startGame (number) {
     let numberGame = number;
-    
-    function numberUser() {
+
+    function numberUser() { 
+         let ind = 10;
+        function doNumber(ind) {
       let userNumber = prompt('Угадай число от 1 до 100'); 
-       function reaction() {
-    if (userNumber == null) {
+     console.log(ind);
+     let a = ind;
+     let messege = function doAgain() { let asks = confirm('Хотите сыграть еще?'); 
+        if (asks === true) {numberUser()}}; 
+    
+        if (userNumber == null) {
         alert('Game over'); 
+        messege() // в усложненном прописано, что игра просто завершается, но даю пользователю шанс))
     } else if (!isNumber(userNumber)) {
         alert ('Введите число');
-        numberUser() 
+        doNumber(a) 
+        
     } else if (userNumber > numberGame) {
-        alert ('Загаданное число больше');
-     numberUser()
+        a--;
+        if (a > 0) {
+        alert ('Загаданное число меньше У вас осталось ' + a + 'попыток');
+        doNumber(a) } else { let again = confirm('Ваши попытки исчерпаны, хотите начать заново?'); 
+        if (again === true){numberUser()} else {alert('Game over')}}
     } else if (userNumber < numberGame) {
-        alert ('Загаданное число меньше');
-        numberUser()
+        a--;
+        if (a > 0) { alert ('Загаданное число больше У вас осталось ' + a + 'попыток');
+        doNumber(a)} else { let again = confirm('Ваши попытки исчерпаны, хотите начать заново?'); 
+        if (again === true){numberUser()} else {alert('Game over')}}
+
     } else if (userNumber == numberGame) {
-        alert ('Поздравляю, вы победили')
-        console.dir(reaction);
+        alert ('Поздравляю, вы победили');
+        messege()
     }
-       }
-       reaction(); 
+      
+    } doNumber(ind); 
     }
     numberUser();
     

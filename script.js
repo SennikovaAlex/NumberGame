@@ -22,10 +22,10 @@ function startGame () {
         alert ('Введите число');
         numberUser() 
     } else if (userNumber > numberGame) {
-        alert ('Загаданное число больше');
+        alert ('Загаданное число меньше');
      numberUser()
     } else if (userNumber < numberGame) {
-        alert ('Загаданное число меньше');
+        alert ('Загаданное число больше');
         numberUser()
     } else if (userNumber == numberGame) {
         alert ('Поздравляю, вы победили')

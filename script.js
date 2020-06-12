@@ -3,14 +3,23 @@ let isNumber = function(n) {
     return !isNaN(parseFloat(n)) && isFinite(n) 
 };
 
-function startGame (number) {
-    let numberGame = number;
+
+function startGame () {
+    let getRandomFloat = function (min, max) {
+        return Math.round(Math.random() * (max - min) + min);
+      };
 
     function numberUser() { 
+     
+        let numberGame = getRandomFloat(1, 100);
+
+          console.log(numberGame);
+
          let ind = 10;
+
         function doNumber(ind) {
       let userNumber = prompt('Угадай число от 1 до 100'); 
-     console.log(ind);
+     
      let a = ind;
      let messege = function doAgain() { let asks = confirm('Хотите сыграть еще?'); 
         if (asks === true) {numberUser()}}; 
@@ -44,8 +53,8 @@ function startGame (number) {
     numberUser();
     
     }
-    
-    startGame(56);
+  
+    startGame();
 
 
 
